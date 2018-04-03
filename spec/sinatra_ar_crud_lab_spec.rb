@@ -82,17 +82,20 @@ describe "Blog Post App" do
 
     it 'displays the existing object in the edit form' do
       visit "/posts/#{@post2.id}/edit"
+
       expect(page.body).to include("#{@post2.name}")
       expect(page.body).to include("#{@post2.content}")
 
     end
 
     it "saves edits to a blog post" do
+
       visit "/posts/#{@post2.id}/edit"
       fill_in :name, :with => "Second Post!!"
       fill_in :content, :with => "this is the best blog post ever written"
 
       click_button 'submit'
+
       expect(Post.all.count).to eq(2)
       expect(Post.last.name).to eq("Second Post!!")
     end
@@ -114,8 +117,6 @@ describe "Blog Post App" do
   end
 
   describe "delete action" do
-
-
     it 'responds with a 200 status code' do
       get "/posts/#{@post2.id}"
       expect(last_response.status).to eq(200)
@@ -134,10 +135,5 @@ describe "Blog Post App" do
     end
 
   end
-
-
-
-
-
 
 end
