@@ -1,0 +1,7 @@
+<h1>List of All Blog Posts </h1>
+  <% Post.all.each do |p| %>
+    <a href="/post/<%= p.id %>"><%= p.name %></a><br>
+  <% end %>
+
+<br>
+<a href="/posts/new">Create new post</a>
