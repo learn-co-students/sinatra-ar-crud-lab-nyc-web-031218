@@ -1,0 +1,11 @@
+<form action="/posts/<%= @post.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH" />
+  <input type="text" placeholder="Name" value="<%= @post.name %>" name="post[name]"/>
+  <input type="text" placeholder="Content" value="<%= @post.content %>" name="post[content]"/>
+  <input type="submit" value="Edit Post" />
+</form>
+
+<form action="/posts/<%= @post.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="Delete Post" />
+</form>
