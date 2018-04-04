@@ -1,0 +1,5 @@
+<!-- Then, it should render the index.erb view. That view should use erb to iterate over @posts and render them on the page. -->
+<% @posts.all.each do |p| %>
+    <%= p.name %>
+    <%= p.content %>
+<%end%>
